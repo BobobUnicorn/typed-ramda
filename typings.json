@@ -1,0 +1,5 @@
+{
+  "name": "ramda",
+  "main": "ramda.d.ts",
+  "dependencies": {}
+}

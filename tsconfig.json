@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+      "module": "commonjs"
+  },
+  "files": [
+    "ramda.d.ts"
+  ]
+}
