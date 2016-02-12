@@ -382,6 +382,10 @@ declare module R {
          */
         mergeAll(list: any[]): any;
 
+        mergeWith: CurriedFunction3<(l, r) => any, any, any, any>;
+
+        mergeWithKey: CurriedFunction3<(k, l, r) => any, any, any, any>;
+
         /**
          * Returns true if no elements of the list match the predicate, false otherwise.
          */
