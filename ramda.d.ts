@@ -803,6 +803,15 @@ declare module R {
         path<T>(path: placeholder, obj: any): (path: string[]) => T;
         path<T>(path: string[]): (obj: any) => T;
 
+        /**
+         * Get the path or the default value
+         */
+        pathOr: CurriedFunction3<any, Array<string>, Object, any>;
+
+        /**
+         * Verify that the property at the path satisfies the predicate
+         */
+        pathSatisfies: CurriedFunction3<(prop:any)=>boolean, Array<string>, Object, boolean>;
 
         /**
          * Returns a partial copy of an object containing only the keys specified.  If the key does not exist, the
