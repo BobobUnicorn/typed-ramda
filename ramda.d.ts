@@ -809,11 +809,6 @@ declare module R {
         pathOr: CurriedFunction3<any, Array<string>, Object, any>;
 
         /**
-         * Verify that the property at the path satisfies the predicate
-         */
-        pathSatisfies: CurriedFunction3<(prop:any)=>boolean, Array<string>, Object, boolean>;
-
-        /**
          * Returns a partial copy of an object containing only the keys specified.  If the key does not exist, the
          * property is ignored.
          */
@@ -1073,7 +1068,6 @@ declare module R {
          */
         invoker(arity: number, method: string): AnyCurriedFunction;
 
-
         lift(fn: Function, ...args: any[]): any;
 
         liftN(n: number, fn: Function, ...args: any[]): any;
@@ -1296,7 +1290,7 @@ declare module R {
         alwaysTrue(): boolean;
 
         /**
-         * Logic Functions
+         * Logic Category
          * ---------------
          */
 
@@ -1384,6 +1378,26 @@ declare module R {
         or<T extends {or?: Function;}, U>(fn1: T, val2: U): T|U;
         or<T extends {or?: Function;}>(fn1: T): <U>(val2: U) => T|U;
 
+        /**
+         * Verify that the property at the path satisfies the predicate
+         */
+        pathSatisfies: CurriedFunction3<(prop: any)=>boolean, string[], any, boolean>;
+
+        /**
+         * Verify that the property satisfies the predicate
+         */
+        propSatisfies: CurriedFunction3<(prop: any)=>boolean, string, any, boolean>;
+
+        /**
+         * Opposite of when
+         */
+        unless: CurriedFunction2<(test: any)=>boolean, (test: any)=>any, any>;
+
+        /**
+         * When the predicate function returns true, the function is mutated using the second funciton.
+         * Otherwise the input is returned as is.
+         */
+        when: CurriedFunction2<(test: any)=>boolean, (test: any)=>any, any>;
 
 
         /**
