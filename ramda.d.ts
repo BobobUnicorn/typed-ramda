@@ -760,11 +760,13 @@ declare module R {
         /**
          * lensProp creates a lens that will focus on property k of the source object.
          */
-        lensProp(str: string): {
-            <T, U>(obj: T): U;
-            set<T,U,V>(val: T, obj: U): V;
-            /*map<T>(fn: Function, obj: T): T*/
-        }
+        lensProp(str: string): Lens;
+        
+        /**
+         * lensPath Returns a lens whose focus is the specified path.
+         */
+        lensPath(path: string[]): Lens;
+        
 
         mapObj<T, TResult>(fn: (value: T) => TResult, obj: any): {[index: string]: TResult};
         mapObj<T, TResult>(fn: (value: T) => TResult): (obj: any) => {[index: string]: TResult};
