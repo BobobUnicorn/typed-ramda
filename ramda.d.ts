@@ -804,9 +804,9 @@ declare module R {
         * The key will be excluded from the returned object if the
         * resulting value is undefined.
         */
-        mergeWith: CurriedFunction3<(l, r) => any, any, any, any>;
+        mergeWith: CurriedFunction3<(l:any, r:any) => any, any, any, any>;
 
-        mergeWithKey: CurriedFunction3<(k, l, r) => any, any, any, any>;
+        mergeWithKey: CurriedFunction3<(k:any, l:any, r:any) => any, any, any, any>;
 
         /**
          * Returns a partial copy of an object omitting the keys specified.
